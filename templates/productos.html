@@ -1,0 +1,67 @@
+{% extends  'base.html' %}
+
+{% block content %}
+
+<section id="productos"> <!-- Sección: productos con imágenes (enlace #productos apunta aquí) -->
+    <h2>Productos</h2>
+    <!-- Contenedor flexible para acomodar las figuras en filas/columnas -->
+    <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+      <figure> <!-- Figura: imagen + pie de foto -->
+        <img src="{{url_for('static',filename='imagenes/Shiitake.png')}}" alt="Hongos Shiitake" width="480" height="310"> <!-- Imagen del producto -->
+        <figcaption>Hongos Shiitake</figcaption> <!-- Pie de foto -->
+      </figure>
+      <figure>
+        <img src="{{url_for('static',filename='imagenes/Orellanas_comida.png')}}" alt="Hongos Ostra" width="400" height="400">
+        <figcaption>Hongos Orellana</figcaption>
+      </figure>
+      <figure>
+        <img src="{{url_for('static',filename='imagenes/melena.png')}}" alt="Hongos Melena de León" width="400" height="250">
+        <figcaption>Hongos Melena de León</figcaption>
+      </figure>
+    </div>
+
+   
+  </section>
+  <section id="lista-hongos"> <!-- Sección adicional de listado simple (id diferente para evitar duplicados) -->
+    <h2>Nuestros Hongos</h2>
+    <ul> <!-- Lista de puntos con descripciones -->
+      <li>🍄 Melena de León – Fresco, suave, dulce y textura carnosa</li>
+      <li>🍄 Shiitake – Sabor intenso y medicinal</li>
+      <li>🍄 Orellana – Tiene propiedades nutricionales y medicinales</li>
+    </ul>
+  </section>
+
+  <section id="tabla"> <!-- Sección con tabla de precios -->
+    <h2>Tabla de Precios</h2>
+    <!-- Tabla sencilla con bordes y espaciado -->
+    <table border="1" cellpadding="10">
+      <thead> <!-- Encabezado de la tabla -->
+        <tr> <!-- Fila -->
+          <th>Hongo</th> <!-- Encabezado de columna -->
+          <th>Precio (kg)</th>
+          <th>Disponibilidad</th>
+        </tr>
+      </thead>
+      <tbody> <!-- Cuerpo de la tabla: filas con datos -->
+        <tr>
+          <td>Shiitake</td>
+          <td>$40,000 COP</td>
+          <td>Media</td>
+        </tr>
+        <tr>
+          <td>Melena de León</td>
+          <td>$55,000 COP</td>
+          <td>Baja</td>
+        </tr>
+        <tr>
+          <td>Orellana</td>
+          <td>$28,000 COP</td>
+          <td>Alta</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  </section>
+  
+  {% endblock %}

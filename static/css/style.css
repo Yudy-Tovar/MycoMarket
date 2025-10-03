@@ -1,0 +1,115 @@
+/* Fuente base, fondo y color general del texto */
+body {
+  font-family: monospace; /* Tipografía simple y de ancho fijo */
+  background-image: url('../imagenes/fon.jpg'); /* Imagen de fondo del sitio */
+  background-repeat: no-repeat; /* Que no se repita la imagen */
+  background-attachment: fixed; /* Fondo fijo al hacer scroll */
+  background-size: cover; /* La imagen se ajusta a toda la pantalla */
+  text-align: center; /* Centra la mayoría del contenido */
+  color: rgb(199, 243, 199); /* Color de texto principal verdoso */
+  font-weight: 200; /* Grosor fino del texto */
+  font-size: 1.1rem; /* Tamaño de letra agradable a la vista */
+}
+
+/* Encabezado (barra superior) */
+header {
+  background-color: rgba(0, 0, 0, 0.7); /* Negro con transparencia */
+  padding: 15px; /* Espacio interno */
+}
+
+/* Título principal dentro del header */
+header h1 {
+  color: rgb(102, 60, 192); /* Morado llamativo */
+  font-size: 2.5rem; /* Tamaño grande del título */
+}
+
+/* (Estructura opcional si se usara <ul> en la navegación) */
+nav ul {
+  list-style: none; /* Quita viñetas de lista */
+  padding: 0; /* Quita espacio interno */
+}
+
+/* (Estructura opcional si se usara <li> en la navegación) */
+nav li {
+  display: inline; /* Pone los elementos en línea */
+  margin: 0 15px; /* Separación horizontal entre enlaces */
+}
+
+/* Enlaces del menú */
+nav a {
+  color: white; /* Texto blanco para buen contraste */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Un poco más grueso */
+  transition: color 0.3s ease; /* Transición suave de color al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse por los enlaces del menú */
+nav a:hover {
+  color: rgb(255, 200, 80); /* Toma un tono dorado */
+}
+
+/* Títulos de cada sección */
+h2 {
+  color: #f4d03f; /* Amarillo para resaltar */
+  margin-top: 20px; /* Separación superior */
+}
+
+/* Párrafos generales */
+p {
+  color: #ffffff; /* Blanco para buen contraste con fondo oscuro */
+  font-weight: 300; /* Un poco más delgado que normal */
+  font-size: 1.2rem; /* Tamaño cómodo para leer */
+}
+
+/* Tabla de precios: apariencia general */
+table {
+  margin: auto; /* Centra la tabla */
+  border-collapse: collapse; /* Une los bordes de celdas */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  color: white; /* Texto blanco */
+}
+
+/* Celdas y encabezados: espacio interno */
+table th, table td {
+  padding: 10px 20px; /* Espaciado interno para mejor lectura */
+}
+
+/* Cabecera de la tabla destacada */
+table th {
+  background-color: rgb(102, 60, 192); /* Morado para resaltar */
+}
+
+/* Contenedor visual del formulario */
+form {
+  background-color: rgba(0, 0, 0, 0.6); /* Tarjeta semitransparente */
+  padding: 20px; /* Espacio interno */
+  width: 60%; /* Ancho del formulario (responsivo simple) */
+  margin: auto; /* Centro horizontalmente */
+  border-radius: 10px; /* Esquinas redondeadas */
+}
+
+/* Campos de texto y textarea con mismo estilo */
+input, textarea {
+  width: 90%; /* Ancho de los campos respecto al contenedor */
+  padding: 8px; /* Espacio interno para comodidad al escribir */
+  margin: 5px 0; /* Separación vertical entre campos */
+  border-radius: 5px; /* Bordes redondeados suaves */
+  border: none; /* Sin borde para look minimalista */
+}
+
+/* Botón de enviar con degradado y efecto hover */
+button {
+  background: linear-gradient(90deg, rgb(102, 60, 192), rgb(199, 243, 199)); /* Degradado morado→verde */
+  color: black; /* Texto oscuro para buen contraste sobre el degradado */
+  font-weight: bold; /* Resalta el texto del botón */
+  padding: 10px 20px; /* Tamaño cómodo para click */
+  border-radius: 8px; /* Bordes redondeados */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+  transition: transform 0.3s ease; /* Suaviza la animación de escala */
+}
+
+/* Al pasar el mouse, el botón crece un poquito */
+button:hover {
+  transform: scale(1.1); /* Aumenta tamaño ligeramente */
+}

@@ -1,0 +1,153 @@
+<!doctype html> <!-- Indica que usamos HTML5 -->
+<html lang="es"> <!-- El idioma del documento es español -->
+<head>
+  <meta charset="utf-8" /> <!-- Soporta caracteres como tildes y ñ -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Hace que se vea bien en móviles -->
+  <title>MycoMarket – Venta de Hongos Comestibles y Medicinales</title> <!-- Título que aparece en la pestaña -->
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}"> <!-- Conectamos el archivo de estilos -->
+</head>
+<body> <!-- Cuerpo del sitio, todo lo visible para el usuario -->
+  <header> <!-- Encabezado superior del sitio -->
+    <h1>
+      <!-- Logo de la marca con texto alternativo (accesibilidad). width/height definen tamaño -->
+      <img src="{{url_for('static',filename='imagenes/logo.png')}}" alt="logo de la empresa MycoMarket" width="220" height="220"><br>
+      MycoMarket <!-- Nombre visible de la marca -->
+    </h1>
+    <nav> <!-- Menú de navegación: enlaces a secciones de la página -->
+      <!-- Cada <a> lleva al id de una sección más abajo -->
+      <a href="#valor" style="font-size:140%">Propuesta</a> |
+      <a href="#clientes" style="font-size:140%">Clientes</a> |
+      <a href="#productos" style="font-size:140%">Productos</a> |
+      <a href="#validacion" style="font-size:140%">Validación</a>
+    </nav>
+  </header>
+
+  <main> <!-- Contenido principal del sitio -->
+    <section id="valor"> <!-- Sección: propuesta de valor (enlace #valor apunta aquí) -->
+      <h2>Propuesta de valor</h2> <!-- Título de la sección -->
+      <p>
+        <!-- Descripción de lo que ofrece la marca -->
+        Ofrecemos <strong>hongos gourmet y medicinales</strong> de cultivo sostenible,<br>
+        con la mejor calidad y frescura. Nuestro objetivo es acercar la micología a todas 
+        las personas, ofreciendo productos saludables y respetuosos con el medio ambiente.
+      </p>
+    </section>
+
+    <section id="clientes"> <!-- Sección: a quién va dirigido (enlace #clientes apunta aquí) -->
+      <h2>Segmento de clientes</h2>
+      <p>
+        Nos dirigimos a consumidores que buscan alimentos naturales, chefs, restaurantes 
+        y personas interesadas en los beneficios nutricionales y medicinales de los hongos.
+      </p>
+    </section>
+
+    <section id="productos"> <!-- Sección: productos con imágenes (enlace #productos apunta aquí) -->
+      <h2>Productos</h2>
+      <!-- Contenedor flexible para acomodar las figuras en filas/columnas -->
+      <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center;">
+        <figure> <!-- Figura: imagen + pie de foto -->
+          <img src="{{url_for('static',filename='imagenes/Shiitake.png')}}" alt="Hongos Shiitake" width="480" height="310"> <!-- Imagen del producto -->
+          <figcaption>Hongos Shiitake</figcaption> <!-- Pie de foto -->
+        </figure>
+        <figure>
+          <img src="{{url_for('static',filename='imagenes/Orellanas_comida.png')}}" alt="Hongos Ostra" width="400" height="400">
+          <figcaption>Hongos Orellana</figcaption>
+        </figure>
+        <figure>
+          <img src="{{url_for('static',filename='imagenes/melena.png')}}" alt="Hongos Melena de León" width="400" height="250">
+          <figcaption>Hongos Melena de León</figcaption>
+        </figure>
+      </div>
+
+      <p>Mira un video informativo sobre estos cultivos:</p> <!-- Texto que presenta el video -->
+      <video width="600" height="400" controls> <!-- Video con controles (play/pausa, volumen, etc.) -->
+        <source src="{{url_for('static',filename='imagenes/Hongo.mp4')}}" type="video/mp4"> <!-- Archivo de video a reproducir -->
+        El navegador no soporta este tipo de videos <!-- Mensaje alternativo si no se puede reproducir -->
+      </video>
+    </section>
+
+    <section id="lista-hongos"> <!-- Sección adicional de listado simple (id diferente para evitar duplicados) -->
+      <h2>Nuestros Hongos</h2>
+      <ul> <!-- Lista de puntos con descripciones -->
+        <li>🍄 Melena de León – Fresco, suave, dulce y textura carnosa</li>
+        <li>🍄 Shiitake – Sabor intenso y medicinal</li>
+        <li>🍄 Orellana – Tiene propiedades nutricionales y medicinales</li>
+      </ul>
+    </section>
+
+    <section id="tabla"> <!-- Sección con tabla de precios -->
+      <h2>Tabla de Precios</h2>
+      <!-- Tabla sencilla con bordes y espaciado -->
+      <table border="1" cellpadding="10">
+        <thead> <!-- Encabezado de la tabla -->
+          <tr> <!-- Fila -->
+            <th>Hongo</th> <!-- Encabezado de columna -->
+            <th>Precio (kg)</th>
+            <th>Disponibilidad</th>
+          </tr>
+        </thead>
+        <tbody> <!-- Cuerpo de la tabla: filas con datos -->
+          <tr>
+            <td>Shiitake</td>
+            <td>$40,000 COP</td>
+            <td>Media</td>
+          </tr>
+          <tr>
+            <td>Melena de León</td>
+            <td>$55,000 COP</td>
+            <td>Baja</td>
+          </tr>
+          <tr>
+            <td>Orellana</td>
+            <td>$28,000 COP</td>
+            <td>Alta</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="validacion"> <!-- Sección con el formulario que el JS usa -->
+      <h2>Formulario de Validación</h2>
+      <!-- Formulario con id para poder “encontrarlo” desde JavaScript -->
+      <form id="contactForm">
+        <!-- Campo de texto para el nombre -->
+        <input type="text" id="nombre" placeholder="Tu nombre">
+        <!-- Campo de correo con validación básica del navegador -->
+        <input type="email" id="correo" placeholder="Tu correo">
+        <!-- Lista desplegable para elegir el interés -->
+        <select id="interes">
+          <option value="shiitake">Shiitake</option>
+          <option value="melena">Melena de León</option>
+          <option value="orellana">Orellana</option>
+        </select>
+        <!-- Número para precio estimado -->
+        <input type="number" id="precio" placeholder="Precio estimado">
+        <!-- Área de texto para un mensaje libre -->
+        <textarea id="mensaje" placeholder="Tu mensaje"></textarea>
+        <!-- Botón que envía el formulario (el JS intercepta el envío) -->
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <section id="respuestas"> <!-- Donde mostraremos lo guardado en localStorage -->
+      <h2>Respuestas guardadas</h2>
+      <div id="listaRespuestas"></div> <!-- Aquí el JS insertará <p> con los resúmenes -->
+    </section>
+  </main>
+
+  <p> <!-- Bloque con enlaces a redes sociales -->
+    Para más información, visítanos en nuestras redes sociales:<br>
+    <a href="https://www.instagram.com/" target="_blank">Instagram</a> |
+    <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+    <a href="https://youtu.be/1hDd6nIbIBc" target="_blank">YouTube</a>
+  </p>
+
+  <!-- Pie de página con derechos -->
+  <footer>
+    <p>&copy; 2025 MycoMarket – Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Cargamos el JavaScript al final para que el HTML ya exista cuando JS lo use -->
+  <script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends  'base.html' %}
+
+{% block content %}
+
+<section id="validacion"> <!-- Sección con el formulario que el JS usa -->
+    <h2>Formulario de Validación</h2>
+    <!-- Formulario con id para poder “encontrarlo” desde JavaScript -->
+    <form id="contactForm">
+      <!-- Campo de texto para el nombre -->
+      <input type="text" id="nombre" placeholder="Tu nombre">
+      <!-- Campo de correo con validación básica del navegador -->
+      <input type="email" id="correo" placeholder="Tu correo">
+      <!-- Lista desplegable para elegir el interés -->
+      <select id="interes">
+        <option value="shiitake">Shiitake</option>
+        <option value="melena">Melena de León</option>
+        <option value="orellana">Orellana</option>
+      </select>
+      <!-- Número para precio estimado -->
+      <input type="number" id="precio" placeholder="Precio estimado">
+      <!-- Área de texto para un mensaje libre -->
+      <textarea id="mensaje" placeholder="Tu mensaje"></textarea>
+      <!-- Botón que envía el formulario (el JS intercepta el envío) -->
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="respuestas"> <!-- Donde mostraremos lo guardado en localStorage -->
+    <h2>Respuestas guardadas</h2>
+    <div id="listaRespuestas"></div> <!-- Aquí el JS insertará <p> con los resúmenes -->
+  </section>
+  
+  {% endblock %}

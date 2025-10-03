@@ -1,0 +1,24 @@
+<!doctype html> <!-- Indica que usamos HTML5 -->
+<html lang="es"> <!-- El idioma del documento es español -->
+<head>
+  <meta charset="utf-8" /> <!-- Soporta caracteres como tildes y ñ -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Hace que se vea bien en móviles -->
+  <title>MycoMarket – Venta de Hongos Comestibles y Medicinales</title> <!-- Título que aparece en la pestaña -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> <!-- Conectamos el archivo de estilos -->
+</head>
+<body> <!-- Cuerpo del sitio, todo lo visible para el usuario -->
+
+{% include "includes/header.html" %}
+
+{% include "includes/navbar.html" %}
+
+  {% block content %}
+
+  {% endblock %}
+
+{% include "includes/footer.html" %}
+
+
+
+</body>
+</html>
